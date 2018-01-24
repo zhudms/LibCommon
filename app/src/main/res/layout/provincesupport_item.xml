@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/provinces_id"
+        style="@style/wrap"
+        tools:text="fdsafdsfadsffdsafdsfadf"
+        android:background="#99FF00"
+        android:paddingRight="20dp" />
+
+    <TextView
+        android:id="@+id/provinces_name"
+        style="@style/wrap"
+        tools:text="qwerewq"
+        android:background="#9933CC"
+        app:layout_constraintLeft_toRightOf="@id/provinces_id" />
+</android.support.constraint.ConstraintLayout>
