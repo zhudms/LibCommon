@@ -15,7 +15,7 @@ public interface DBManageable<T> {
 
     void initDBHelper();
 
-    void updataDB(Context context,T t);
+//    void updataDB(Context context,T t);
 
      T getLocalData(Context context);
 

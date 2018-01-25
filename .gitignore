@@ -13,3 +13,6 @@ app/build/cache/greendao-candidates.list
 app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_launcher_background.xml
 
 app/build/
+
+.idea/gradle.xml
+.idea/
