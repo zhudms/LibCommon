@@ -7,6 +7,9 @@ import com.ryl.myandroidlibdemo.bean.HttpCancelBean;
  */
 
 public interface ManageableHttpRequest {
+    /**
+     * 解决在网络请求时界面关闭导致的内存泄露
+     */
     void clearHttpRequest();
 
     void addDisposable(HttpCancelBean bean);
