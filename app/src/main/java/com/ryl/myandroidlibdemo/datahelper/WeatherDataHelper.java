@@ -7,6 +7,8 @@ import com.ryl.commonlib.tools.StringUtils;
 import com.ryl.commonlib.utils.LU;
 import com.ryl.myandroidlibdemo.MyApplication;
 import com.ryl.myandroidlibdemo.R;
+import com.ryl.myandroidlibdemo.base.ManageableResponseLisner;
+import com.ryl.myandroidlibdemo.bean.HttpCancelBean;
 import com.ryl.myandroidlibdemo.bean.WeatherSupportProvince;
 import com.ryl.myandroidlibdemo.db.utils.DBManageable;
 import com.ryl.myandroidlibdemo.db.utils.WeatherDBHelper;
@@ -18,8 +20,10 @@ import com.ryl.myandroidlibdemo.util.NetUtil;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import io.reactivex.Observable;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
 /**
@@ -42,9 +46,10 @@ public class WeatherDataHelper /*extends BaseDataHelper<List<Provinces>>*/ imple
     }
 
 
+    public HttpCancelBean getProvinces(final Context mContext, final ManageableResponseLisner responseLisener) {
 
-    public void getProvinces(final Context mContext, final ResponseLisener responseLisener) {
-
+        //网络请求取消句柄及 tag
+        HttpCancelBean bean = null;
 
         if (NetUtil.isNetworkUseful(mContext)) {
 
@@ -78,6 +83,8 @@ public class WeatherDataHelper /*extends BaseDataHelper<List<Provinces>>*/ imple
                     });
             observableP.subscribe(baseObserver);
 
+            Disposable dis = baseObserver.getmDis();
+            bean = new HttpCancelBean(responseLisener.getTag(), dis);
         } else {
 
             try {
@@ -87,6 +94,8 @@ public class WeatherDataHelper /*extends BaseDataHelper<List<Provinces>>*/ imple
                 responseLisener.onFail(e.toString());
             }
         }
+
+        return bean;
 
     }
 

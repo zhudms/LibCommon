@@ -3,6 +3,7 @@ package com.ryl.myandroidlibdemo.ProvincesSuppors;
 import com.ryl.myandroidlibdemo.base.presenter.BaseModel;
 import com.ryl.myandroidlibdemo.base.presenter.BasePresenter;
 import com.ryl.myandroidlibdemo.base.presenter.BaseView;
+import com.ryl.myandroidlibdemo.bean.HttpCancelBean;
 import com.ryl.myandroidlibdemo.testbean.Provinces;
 
 import java.util.List;
@@ -36,5 +37,6 @@ public interface ProvinceSupportsContract {
     interface Model extends BaseModel<List<Provinces>>{
         boolean updataDB(List<Provinces> provinces);
         void showLists(List<Provinces> provinces);
+
     }
 }

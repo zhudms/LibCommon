@@ -41,7 +41,6 @@ public class ProvincesSupporsPre implements ProvinceSupportsContract.Presenter, 
     }
 
 
-
     @Override
     public ProvinceAdapter getProvinceAdapter() {
         return mAdapter;
@@ -61,7 +60,7 @@ public class ProvincesSupporsPre implements ProvinceSupportsContract.Presenter, 
 
     @Override
     public void showLists(List<Provinces> lists) {
-        if (lists==null||lists.size()==0){
+        if (lists == null || lists.size() == 0) {
 
             showEmptyView();
             return;
@@ -80,7 +79,8 @@ public class ProvincesSupporsPre implements ProvinceSupportsContract.Presenter, 
 
     @Override
     public void unsubscribe() {
-
+        mModel.clearHttpRequest();
+        mModel = null;
     }
 
 

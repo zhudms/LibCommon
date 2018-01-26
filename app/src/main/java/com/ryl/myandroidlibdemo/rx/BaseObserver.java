@@ -21,7 +21,8 @@ import io.reactivex.disposables.Disposable;
 
 public class BaseObserver<T> implements Observer<T> {
 
-    private Disposable mDis;
+
+    public Disposable mDis;
 
 //    private SoftReference<Context> mSContext;
 
@@ -55,10 +56,19 @@ public class BaseObserver<T> implements Observer<T> {
         disPos();
     }
 
+    /**
+     * 取消网络请求
+     */
     public void disPos() {
-//        if (mDis != null && !mDis.isDisposed()) {
-//            mDis.dispose();
-//        }
+        if (mDis != null && !mDis.isDisposed()) {
+            mDis.dispose();
+        }
+    }
+
+
+
+    public Disposable getmDis() {
+        return mDis;
     }
 
 }

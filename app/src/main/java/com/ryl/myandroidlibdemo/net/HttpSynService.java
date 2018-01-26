@@ -50,7 +50,7 @@ public class HttpSynService {
         return call;
     }
 
-    public static Call<WeatherSupportProvince> getSupportProvince(final String key, final  ResponseLisener<List<Provinces>> lisener) {
+    public static Call<WeatherSupportProvince> getSupportProvince(final String tag,final String key, final  ResponseLisener<List<Provinces>> lisener) {
 
         final Call<WeatherSupportProvince> call = MyApplication.mHttp.getSupportProvince(key);
 
